@@ -1,0 +1,131 @@
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+  background: #111111;
+  color: #ffc600;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Amatic SC', cursive;
+  /* font-family: 'Metal Mania', cursive; */
+}
+
+h1 {
+  text-align: center;
+  font-size: 8rem;
+  line-height: 1;
+  margin-bottom: 0;
+}
+
+.start_container {
+  height: 50px;
+  text-align: center;
+}
+
+.start_button {
+  font-family: monospace;
+  font-size: 1.5em;
+  background: rgb(61, 61, 61);
+  color: rgb(224, 224, 224);
+  padding: 5px 10px;
+}
+
+.start_button:hover {
+  background: rgb(0, 129, 28);
+}
+
+.score {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0 3rem;
+  line-height: 1;
+  border-radius: 1rem;
+}
+
+.game {
+  width: 600px;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.hole {
+  flex: 1 0 33.33%;
+  overflow: hidden;
+  position: relative;
+  /* border: 1px solid gray; */
+}
+
+
+.bry {
+  flex: 1 0 33.33%;
+  overflow: hidden;
+  position: relative;
+}
+
+.brycon {
+  background: url('bry.svg') bottom center no-repeat;
+}
+
+.tshirt {
+  background: url('metallica.svg') bottom center no-repeat;
+}
+
+.hole:after {
+  display: block;
+  background: url() bottom center no-repeat;
+  background-size: contain;
+  content: '';
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  z-index: 2;
+  bottom: -30px;
+}
+
+.hand {
+  background: url('hand.svg') bottom center no-repeat;
+  background-size: 50%;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  transition: all 0.4s;
+  cursor: grab;
+}
+
+.hole.up .hand {
+  top: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.hole1 {
+  transform: scaleX(-1);
+}
+
+.hole3 {
+  transform: scaleX(-1) rotate(90deg) translate(0px, -100px);
+}
+
+.hole4 {
+  transform: rotate(90deg) translate(0px, -100px)
+}
+
+/* .hole5 {
+  transform: scaleX(-1) rotate(180deg)
+}
+
+.hole6 {
+  transform: rotate(180deg)
+} */
