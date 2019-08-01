@@ -9,6 +9,7 @@ const clap = new Audio('clap.wav');
 
 let lastHole;
 let timeUp = false;
+let currentTime = 0;
 let score = 0;
 
 function randomTime(min, max) {
@@ -21,7 +22,6 @@ function randomHole(holes) {
   const idx = Math.floor(Math.random() * holes.length)
   const hole = holes[idx]
   if (hole === lastHole) {
-    console.log("REPEAT")
     return randomHole(holes)
   }
   lastHole = hole
@@ -30,8 +30,10 @@ function randomHole(holes) {
 
 function peep() {
   const time = randomTime(400, 2000);
+  currentTime = time
+  console.log('time: ', time);
+
   const hole = randomHole(holes)
-  console.log(time, hole);
   hole.classList.add('up')
   setTimeout(() => {
     hole.classList.remove('up')
@@ -68,8 +70,7 @@ function startGame() {
 function bonk(evt) {
   if (!evt.isTrusted) return // cheating !!
   // clap.play();
-  console.log('evt: ', evt);
-  score++
+  score += currentTime
   // 'this' is the hand > need to remove 'up' class from parentNode
   this.parentNode.classList.remove('up')
   scoreBoard.textContent = score
