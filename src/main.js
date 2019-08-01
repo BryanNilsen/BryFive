@@ -69,8 +69,12 @@ function startGame() {
 
 function bonk(evt) {
   if (!evt.isTrusted) return // cheating !!
-  // clap.play();
-  score += currentTime
+  clap.play();
+  // calculate points based off of time >> shorter time hand is on screen awards higher points
+  let calculatedPoints = (1 / currentTime) * 100000
+  console.log('calculatedPoints: ', calculatedPoints, currentTime);
+
+  score += Math.round(calculatedPoints)
   // 'this' is the hand > need to remove 'up' class from parentNode
   this.parentNode.classList.remove('up')
   scoreBoard.textContent = score
