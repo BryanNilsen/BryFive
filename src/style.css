@@ -129,3 +129,10 @@ h1 {
 .hole6 {
   transform: rotate(180deg)
 } */
+
+
+.scoreboard {
+  text-align: center;
+  font-family: monospace;
+  font-size: 2em;
+}
