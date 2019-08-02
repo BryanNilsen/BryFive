@@ -12,6 +12,22 @@ let timeUp = false;
 let currentTime = 0;
 let score = 0;
 
+
+// get scores and render to dom
+const getScoresAndRenderDom = () => {
+  topScores.innerHTML = ""
+  API.getAll().then(results => {
+    results.sort((a, b) => b.score - a.score)
+      .forEach(result => {
+        const scoreAsHTML = scoreToHTML(result)
+        renderScoreToDom(scoreAsHTML)
+      })
+  }
+  )
+}
+getScoresAndRenderDom()
+
+
 function randomTime(min, max) {
   // generate random length of time for high-five to display
   return Math.round(Math.random() * (max - min) + min)
@@ -28,7 +44,7 @@ function randomHole(holes) {
   return hole
 }
 
-function peep() {
+function showHand() {
   const time = randomTime(400, 2000);
   currentTime = time
   console.log('time: ', time);
@@ -38,7 +54,7 @@ function peep() {
   setTimeout(() => {
     hole.classList.remove('up')
     if (!timeUp) {
-      peep()
+      showHand()
     }
   }, time)
 
@@ -53,7 +69,7 @@ function startGame() {
   scoreBoard.textContent = 0;
   score = 0
   timeUp = false;
-  peep();
+  showHand();
 
   // game length
   setTimeout(() => {
@@ -66,28 +82,33 @@ function startGame() {
 }
 
 
+// when user successfully High-Fives
+function hiFive(evt) {
+  // prevent cheating - won't count high five if user tries to fake click!!
+  if (!evt.isTrusted) return
 
-function bonk(evt) {
-  if (!evt.isTrusted) return // cheating !!
+  // add clap sound
   clap.play();
+
   // calculate points based off of time >> shorter time hand is on screen awards higher points
   let calculatedPoints = (1 / currentTime) * 100000
-  console.log('calculatedPoints: ', calculatedPoints, currentTime);
-
   score += Math.round(calculatedPoints)
-  // 'this' is the hand > need to remove 'up' class from parentNode
-  this.parentNode.classList.remove('up')
   scoreBoard.textContent = score
 
+  // 'this' is the hand > need to remove 'up' class from parentNode
+  this.parentNode.classList.remove('up')
 }
 
-hands.forEach(hand => hand.addEventListener('click', bonk))
+// add event listener to all hands
+hands.forEach(hand => hand.addEventListener('click', hiFive))
 
+// when game completes, alert the user their score and let them add initials to leaderboard
 function printScore(score) {
-  // TODO - submit name and score to database
-  let plural = "s"
-  if (score < 2) {
-    plural = ""
+  const scoreInitials = prompt(`Great Job!\nYou scored ${score} points!\nenter your initials`, "")
+  const newScore = {
+    "name": scoreInitials,
+    "score": score
   }
-  console.log(`You scored ${score} point${plural}!`)
+  // post score to DB, then get all scores and rerender to DOM
+  API.postScore(newScore).then(() => getScoresAndRenderDom())
 }
