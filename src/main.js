@@ -97,7 +97,8 @@ function hiFive(evt) {
   clap.play();
 
   // calculate points based off of time >> shorter time hand is on screen awards higher points
-  let calculatedPoints = (1 / currentTime) * 100000
+  let calculatedPoints = (2 / (currentTime * currentTime)) * 100000000
+  console.log(`${currentTime} : ${calculatedPoints}`);
   score += Math.round(calculatedPoints)
   scoreBoard.textContent = score
 
