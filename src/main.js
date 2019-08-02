@@ -116,5 +116,7 @@ function printScore(score) {
     "score": score
   }
   // post score to DB, then get all scores and rerender to DOM
-  API.postScore(newScore).then(() => getScoresAndRenderDom())
+  if (scoreInitials) {
+    API.postScore(newScore).then(() => getScoresAndRenderDom())
+  }
 }

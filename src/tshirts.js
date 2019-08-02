@@ -2,7 +2,7 @@
 const tshirtDiv = document.querySelector('#tshirt')
 
 // array of images
-const tshirtsArray = ["hardwired.svg", "vanhalen.svg", "metallica.svg", "pj-wrigley.svg", "bboys.svg"]
+const tshirtsArray = ["hardwired.svg", "vanhalen.svg", "pj-wrigley.svg", "bboys.svg", "rootdown.svg", "tommorello.svg", "gimmebadnews.svg"]
 
 let currentTshirt
 
@@ -12,6 +12,7 @@ const randomTshirt = () => {
   if (tshirt === currentTshirt) {
     return randomTshirt()
   }
+
   currentTshirt = tshirt
   tshirtDiv.innerHTML = `<img src=${currentTshirt} alt="band tshirt">`
 
