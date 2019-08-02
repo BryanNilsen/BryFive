@@ -12,11 +12,10 @@ let timeUp = false;
 let currentTime = 0;
 let score = 0;
 
-// set band tshirt
-const tshirtDiv = document.querySelector('#tshirt')
-tshirtDiv.innerHTML = `<img src="hardwired.svg" alt="band tshirt">`
+// set bryan face image
 const bryDiv = document.querySelector('.brycon')
 bryDiv.innerHTML = `<img src="bryan.svg" alt="bryan">`
+
 
 // get scores and render to dom
 const getScoresAndRenderDom = () => {
@@ -82,6 +81,8 @@ function startGame() {
     // show start button
     startButton.classList.remove('hidden')
     printScore(score)
+    // change shirt
+    randomTshirt()
   }, 15000)
 
 }
