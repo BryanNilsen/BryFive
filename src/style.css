@@ -71,13 +71,13 @@ h1 {
   position: relative;
 }
 
-.brycon {
-  background: url('bry.svg') bottom center no-repeat;
-}
+/* .brycon {
+  background: url('bryan.svg') bottom center no-repeat;
+} */
 
-.tshirt {
-  background: url('metallica.svg') bottom center no-repeat;
-}
+/* .tshirt {
+  background: url('hardwired.svg') bottom center no-repeat;
+} */
 
 .hole:after {
   display: block;
