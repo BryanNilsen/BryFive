@@ -13,7 +13,7 @@ const randomTshirt = () => {
     return randomTshirt()
   }
 
-  currentTshirt = `./src/${tshirt}`
+  currentTshirt = `./src/images/${tshirt}`
   tshirtDiv.innerHTML = `<img src=${currentTshirt} alt="band tshirt">`
 
   // return tshirt
