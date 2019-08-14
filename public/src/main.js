@@ -5,7 +5,7 @@ const holes = document.querySelectorAll('.hole');
 const scoreBoard = document.querySelector('.score');
 const hands = document.querySelectorAll('.hand');
 const startButton = document.querySelector('#startButton')
-const clap = new Audio('clap.wav');
+const clap = new Audio('./src/clap.wav');
 
 let lastHole;
 let timeUp = false;
@@ -14,7 +14,7 @@ let score = 0;
 
 // set bryan face image
 const bryDiv = document.querySelector('.brycon')
-bryDiv.innerHTML = `<img src="bryan.svg" alt="bryan">`
+bryDiv.innerHTML = `<img src="./src/bryan.svg" alt="bryan">`
 
 
 // get scores and render to dom
@@ -107,7 +107,9 @@ function hiFive(evt) {
 }
 
 // add event listener to all hands
+// add event listener to all hands
 hands.forEach(hand => hand.addEventListener('click', hiFive))
+hands.forEach(hand => hand.addEventListener('touchstart', hiFive))
 
 // when game completes, alert the user their score and let them add initials to leaderboard
 function printScore(score) {
