@@ -6,46 +6,31 @@
   <title>Bry Five!!</title>
   <link href='https://fonts.googleapis.com/css?family=Amatic+SC:400,700' rel='stylesheet' type='text/css'>
   <link href="https://fonts.googleapis.com/css?family=Metal+Mania&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Londrina+Solid:300,400,900&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="./src/style.css">
+  <link rel="stylesheet" href="./src/index.css">
 </head>
 
 <body>
 
-  <h1>Bry Five! - Score:<span class="score">0</span></h1>
-  <div class="start_container">
-    <button id="startButton" onClick="startGame()" class="start_button">Play!</button>
-  </div>
+  <h1>BRYFIVE!!</h1>
+  <div class="home_wrapper">
 
-  <div class="game">
-    <div class="hole hole1">
-      <div class="hand"></div>
-    </div>
-    <div class="bry brycon">
-      <div class=""></div>
-    </div>
-    <div class="hole hole2">
-      <div class="hand"></div>
-    </div>
-    <div class="hole hole3">
-      <div class="hand"></div>
-    </div>
-    <div id="tshirt" class="bry tshirt">
-      <div></div>
-    </div>
-    <div class="hole hole4">
-      <div class="hand"></div>
+    <div class="home_hand"><img src="./src/bryan.svg" alt="bryan" width="230px"><a href="./play.html"><img
+          src="./src/hand2.svg" alt="hand" width="120px"></a></div>
+    </br>
+    <div class="home_text">
+      <p>
+        I’ve got a bunch of sweet high-fives with your name on them. I’m pretty fast though.
+      </p>
+      <p>
+        Think you can keep up and get the top score???
+      </p>
+      <p>
+        High Five Me to Start!
+      </p>
     </div>
   </div>
-  <section>
-    <h1>Top Scores</h1>
-    <div id="top_scores"></div>
-  </section>
-
-  <script src="./src/data.js"></script>
-  <script src="./src/renderScores.js"></script>
-  <script src="./src/tshirts.js"></script>
-  <script src="./src/main.js"></script>
 </body>
 
 </html>

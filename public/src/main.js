@@ -1,6 +1,7 @@
 console.log("Bry Five is Live!")
 // code modified from wes bos whack-a-mole Javascript 30
-
+const highScoreContainer = document.querySelector('#high_score_container')
+const initialsInput = document.querySelector('#score_initials')
 const holes = document.querySelectorAll('.hole');
 const scoreBoard = document.querySelector('.score');
 const hands = document.querySelectorAll('.hand');
@@ -113,6 +114,11 @@ hands.forEach(hand => hand.addEventListener('touchstart', hiFive))
 
 // when game completes, alert the user their score and let them add initials to leaderboard
 function printScore(score) {
+  // show high score input container
+  // highScoreContainer.classList.remove("hidden")
+  // const scoreInitials = initialsInput.value
+
+  // once input container works, ditch the prompt
   const scoreInitials = prompt(`Great Job!\nYou scored ${score} points!\nenter your initials`, "")
   const newScore = {
     "name": scoreInitials,
