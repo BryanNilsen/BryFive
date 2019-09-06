@@ -1,8 +1,9 @@
 html {
   box-sizing: border-box;
-  font-size: 10px;
+  font-size: 16px;
   background: #111111;
   color: #ffc600;
+  touch-action: manipulation;
 }
 
 *,
@@ -14,13 +15,69 @@ html {
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Amatic SC', cursive;
+  font-family: 'Londrina Solid', cursive;
+  /* font-family: 'Amatic SC', cursive; */
   /* font-family: 'Metal Mania', cursive; */
+}
+
+/* TOP NAVIGATION */
+nav {
+  background: rgb(33, 33, 33);
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 2rem;
+}
+
+nav a {
+  text-decoration: none;
+  text-shadow: -5px 5px 0px rgb(0, 0, 0);
+  -webkit-text-fill-color: rgb(61, 61, 61);
+  /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+}
+
+nav a:hover {
+  color: rgb(255, 127, 0);
+  -webkit-text-fill-color: rgb(255, 127, 0);
+}
+
+.nav_logo {
+  font-size: 4rem;
+}
+
+nav div {
+  display: inline-block;
+}
+
+.score_banner {
+  display: block;
+  text-align: center;
+  min-width: 180px;
+  width: 100%;
+  background: #111111;
+}
+
+.score_title {
+  min-width: 180px;
+  width: 100%;
+  font-size: 2rem;
+  background: #111111;
+  text-align: center;
+  color: rgb(255, 0, 0);
+}
+
+.score {
+  font-size: 3rem;
+  color: rgb(255, 127, 0);
+  padding: 0 3rem;
+  line-height: 1;
 }
 
 h1 {
   text-align: center;
-  font-size: 8rem;
+  font-size: 6rem;
+  font-weight: 400;
   line-height: 1;
   margin-bottom: 0;
 }
@@ -42,12 +99,7 @@ h1 {
   background: rgb(0, 129, 28);
 }
 
-.score {
-  background: rgba(255, 255, 255, 0.2);
-  padding: 0 3rem;
-  line-height: 1;
-  border-radius: 1rem;
-}
+
 
 .game {
   width: 600px;
@@ -61,6 +113,7 @@ h1 {
   flex: 1 0 33.33%;
   overflow: hidden;
   position: relative;
+  touch-action: manipulation;
   /* border: 1px solid gray; */
 }
 
@@ -92,7 +145,7 @@ h1 {
 }
 
 .hand {
-  background: url('hand.svg') bottom center no-repeat;
+  background: url('hand2.svg') bottom center no-repeat;
   background-size: 50%;
   position: absolute;
   top: 100%;
@@ -100,6 +153,7 @@ h1 {
   height: 100%;
   transition: all 0.4s;
   cursor: grab;
+  touch-action: manipulation;
 }
 
 .hole.up .hand {
@@ -135,4 +189,34 @@ h1 {
   text-align: center;
   font-family: monospace;
   font-size: 2em;
+}
+
+
+
+/* HOME PAGE BUTTONS */
+.buttons_main {
+  width: 200px;
+  border: 4px solid black;
+  border-radius: 10px;
+  color: black;
+  font-family: 'Londrina Solid', cursive;
+  font-size: 1.5em;
+  background-color: rgb(92, 92, 92)
+}
+
+/*
+.yeah {
+  background-color: rgba(127, 219, 70, 0.5)
+} */
+
+.yeah:hover {
+  background-color: rgba(127, 219, 70, 1)
+}
+
+/* .nope {
+  background-color: rgba(227, 26, 26, 0.5)
+} */
+
+.nope:hover {
+  background-color: rgba(227, 26, 26, 1)
 }

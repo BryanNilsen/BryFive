@@ -1,0 +1,69 @@
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+  background: rgb(36, 36, 36);
+  touch-action: manipulation;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Londrina Solid', cursive;
+}
+
+h1 {
+  text-align: center;
+  font-size: 8rem;
+  font-weight: 400;
+  line-height: 1;
+  margin-bottom: 10px;
+  text-shadow: -5px 5px 0px rgb(0, 0, 0);
+  color: rgb(255, 127, 0);
+  -webkit-text-fill-color: rgb(255, 127, 0);
+  /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+}
+
+.home_wrapper {
+  text-align: center;
+}
+
+.home_hand {
+  display: inline-block;
+  width: 40%;
+  min-width: 350px;
+
+}
+
+.home_hand a {
+  opacity: .2;
+}
+
+.home_hand a:hover {
+  opacity: 1.0;
+}
+
+.home_text {
+  border: 4px solid rgb(20, 20, 20);
+  border-radius: 20px;
+  display: inline-block;
+  color: rgb(49, 49, 49);
+  text-align: left;
+  font-size: 2.5rem;
+  background-color: white;
+  min-width: 350px;
+  width: 40%;
+  padding: 10px 15px;
+}
+
+.home_text p {
+  margin-top: 0px;
+  line-height: 1.5;
+}

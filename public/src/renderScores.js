@@ -14,3 +14,17 @@ const topScores = document.querySelector('#top_scores')
 const renderScoreToDom = (scoreAsHTML) => {
   topScores.innerHTML += scoreAsHTML
 }
+
+// get scores and render to dom
+const getScoresAndRenderDom = () => {
+  topScores.innerHTML = ""
+  API.getAll().then(results => {
+    results.sort((a, b) => b.score - a.score)
+      .forEach(result => {
+        const scoreAsHTML = scoreToHTML(result)
+        renderScoreToDom(scoreAsHTML)
+      })
+  }
+  )
+}
+getScoresAndRenderDom()

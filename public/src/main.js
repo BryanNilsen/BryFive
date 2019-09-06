@@ -1,11 +1,11 @@
 console.log("Bry Five is Live!")
 // code modified from wes bos whack-a-mole Javascript 30
-
+const highScoreContainer = document.querySelector('#high_score_container')
 const holes = document.querySelectorAll('.hole');
 const scoreBoard = document.querySelector('.score');
 const hands = document.querySelectorAll('.hand');
 const startButton = document.querySelector('#startButton')
-const clap = new Audio('clap.wav');
+const clap = new Audio('./src/clap.wav');
 
 let lastHole;
 let timeUp = false;
@@ -14,22 +14,8 @@ let score = 0;
 
 // set bryan face image
 const bryDiv = document.querySelector('.brycon')
-bryDiv.innerHTML = `<img src="bryan.svg" alt="bryan">`
+bryDiv.innerHTML = `<img src="./src/bryan.svg" alt="bryan">`
 
-
-// get scores and render to dom
-const getScoresAndRenderDom = () => {
-  topScores.innerHTML = ""
-  API.getAll().then(results => {
-    results.sort((a, b) => b.score - a.score)
-      .forEach(result => {
-        const scoreAsHTML = scoreToHTML(result)
-        renderScoreToDom(scoreAsHTML)
-      })
-  }
-  )
-}
-getScoresAndRenderDom()
 
 
 function randomTime(min, max) {
@@ -64,7 +50,6 @@ function showHand() {
 
 }
 
-// TODO create random tshirt generator
 
 function startGame() {
   // hide start button during gameplay
@@ -107,10 +92,17 @@ function hiFive(evt) {
 }
 
 // add event listener to all hands
+// add event listener to all hands
 hands.forEach(hand => hand.addEventListener('click', hiFive))
+hands.forEach(hand => hand.addEventListener('touchstart', hiFive))
 
 // when game completes, alert the user their score and let them add initials to leaderboard
 function printScore(score) {
+  // show high score input container
+  // highScoreContainer.classList.remove("hidden")
+  // const scoreInitials = initialsInput.value
+
+  // once input container works, ditch the prompt
   const scoreInitials = prompt(`Great Job!\nYou scored ${score} points!\nenter your initials`, "")
   const newScore = {
     "name": scoreInitials,
@@ -118,6 +110,6 @@ function printScore(score) {
   }
   // post score to DB, then get all scores and rerender to DOM
   if (scoreInitials) {
-    API.postScore(newScore).then(() => getScoresAndRenderDom())
+    API.postScore(newScore)
   }
 }
