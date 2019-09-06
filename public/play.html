@@ -4,16 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <title>Bry Five!!- Play</title>
-  <link href='https://fonts.googleapis.com/css?family=Amatic+SC:400,700' rel='stylesheet' type='text/css'>
-  <link href="https://fonts.googleapis.com/css?family=Metal+Mania&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Londrina+Solid:300,400,900&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="./src/style.css">
 </head>
 
 <body>
+  <!-- NAVIGATION AND SCOREBOARD -->
   <nav>
-    <div>BRYFIVE!!</div>
+    <div class="nav_logo"><a href="./index.html"> BRYFIVE!!</a></div>
     <div>
       <div class="score_title">SCORE</div>
       <div class="score_banner">
@@ -23,11 +22,7 @@
     <div>Play About Top Fives</div>
   </nav>
 
-
-  <div class="start_container">
-    <button id="startButton" onClick="startGame()" class="start_button">Play!</button>
-  </div>
-
+  <!-- GAME AREA -->
   <div class="game">
     <div class="hole hole1">
       <div class="hand"></div>
@@ -49,10 +44,16 @@
     </div>
   </div>
 
+  <!-- START BUTTON -->
+  <div class="start_container">
+    <button id="startButton" onClick="startGame()" class="start_button">Play!</button>
+  </div>
 
+  <!-- SCRIPTS -->
   <script src="./src/data.js"></script>
   <script src="./src/tshirts.js"></script>
   <script src="./src/main.js"></script>
+
 </body>
 
 </html>

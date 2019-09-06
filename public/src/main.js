@@ -110,6 +110,6 @@ function printScore(score) {
   }
   // post score to DB, then get all scores and rerender to DOM
   if (scoreInitials) {
-    API.postScore(newScore).then(() => getScoresAndRenderDom())
+    API.postScore(newScore)
   }
 }

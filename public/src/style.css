@@ -28,6 +28,24 @@ nav {
   font-size: 2rem;
 }
 
+nav a {
+  text-decoration: none;
+  text-shadow: -5px 5px 0px rgb(0, 0, 0);
+  -webkit-text-fill-color: rgb(61, 61, 61);
+  /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+}
+
+nav a:hover {
+  color: rgb(255, 127, 0);
+  -webkit-text-fill-color: rgb(255, 127, 0);
+}
+
+.nav_logo {
+  font-size: 4rem;
+}
+
 nav div {
   display: inline-block;
 }
@@ -35,9 +53,13 @@ nav div {
 .score_banner {
   display: block;
   text-align: center;
+  min-width: 180px;
+  width: 100%;
+  background: #111111;
 }
 
 .score_title {
+  min-width: 180px;
   width: 100%;
   font-size: 2rem;
   background: #111111;
@@ -46,7 +68,6 @@ nav div {
 }
 
 .score {
-  background: #111111;
   font-size: 3rem;
   color: rgb(255, 127, 0);
   padding: 0 3rem;
