@@ -1,7 +1,6 @@
 console.log("Bry Five is Live!")
 // code modified from wes bos whack-a-mole Javascript 30
 const highScoreContainer = document.querySelector('#high_score_container')
-const initialsInput = document.querySelector('#score_initials')
 const holes = document.querySelectorAll('.hole');
 const scoreBoard = document.querySelector('.score');
 const hands = document.querySelectorAll('.hand');
@@ -17,20 +16,6 @@ let score = 0;
 const bryDiv = document.querySelector('.brycon')
 bryDiv.innerHTML = `<img src="./src/bryan.svg" alt="bryan">`
 
-
-// get scores and render to dom
-const getScoresAndRenderDom = () => {
-  topScores.innerHTML = ""
-  API.getAll().then(results => {
-    results.sort((a, b) => b.score - a.score)
-      .forEach(result => {
-        const scoreAsHTML = scoreToHTML(result)
-        renderScoreToDom(scoreAsHTML)
-      })
-  }
-  )
-}
-getScoresAndRenderDom()
 
 
 function randomTime(min, max) {
@@ -65,7 +50,6 @@ function showHand() {
 
 }
 
-// TODO create random tshirt generator
 
 function startGame() {
   // hide start button during gameplay

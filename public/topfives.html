@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Bry Five!!- Play</title>
+  <title>Bry Five!!- Top Fives</title>
   <link href='https://fonts.googleapis.com/css?family=Amatic+SC:400,700' rel='stylesheet' type='text/css'>
   <link href="https://fonts.googleapis.com/css?family=Metal+Mania&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Londrina+Solid:300,400,900&display=swap" rel="stylesheet">
@@ -24,35 +24,14 @@
   </nav>
 
 
-  <div class="start_container">
-    <button id="startButton" onClick="startGame()" class="start_button">Play!</button>
-  </div>
 
-  <div class="game">
-    <div class="hole hole1">
-      <div class="hand"></div>
-    </div>
-    <div class="bry brycon">
-      <div class=""></div>
-    </div>
-    <div class="hole hole2">
-      <div class="hand"></div>
-    </div>
-    <div class="hole hole3">
-      <div class="hand"></div>
-    </div>
-    <div id="tshirt" class="bry tshirt">
-      <div></div>
-    </div>
-    <div class="hole hole4">
-      <div class="hand"></div>
-    </div>
-  </div>
-
+  <section>
+    <h1>Top Scores</h1>
+    <div id="top_scores"></div>
+  </section>
 
   <script src="./src/data.js"></script>
-  <script src="./src/tshirts.js"></script>
-  <script src="./src/main.js"></script>
+  <script src="./src/renderScores.js"></script>
 </body>
 
 </html>
