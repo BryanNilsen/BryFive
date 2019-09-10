@@ -12,16 +12,30 @@
 </head>
 
 <body>
-
+  <nav>
+    <div class="nav_logo"><a href="./index.html"> BRYFIVE!!</a></div>
+    <div>
+      <div class="score_title">SCORE</div>
+      <div class="score_banner">
+        <span class="score">0</span>
+      </div>
+    </div>
+    <div>
+      <a href="./play.html">Play</a>
+      <a href="./about.html">About</a>
+      <a href="./scores.html">Top Fives</a>
+    </div>
+  </nav>
 
   <section>
-    <h1>Top Scores</h1>
-    <div id="top_scores"></div>
+    <h1>Top Fives</h1>
+
+    <div id="top_scores" class="scoreboard_wrapper"></div>
   </section>
 
   <script src="./src/data.js"></script>
   <script src="./src/renderScores.js"></script>
-  <script src="./src/main.js"></script>
+  <!-- <script src="./src/main.js"></script> -->
 </body>
 
 </html>
