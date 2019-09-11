@@ -1,9 +1,11 @@
 // take score object and convert to HTML
 const scoreToHTML = (scoreObj) => {
+  const dotCount = 24 - (scoreObj.score.toString().length + scoreObj.name.length)
+  const dot = "."
   return `
-  <div class="scoreboard">
-  <p>${scoreObj.score} - ${scoreObj.name}</p>
-  </div>
+    <div class="scoreboard">
+      ${scoreObj.score} ${dot.repeat(dotCount)} ${scoreObj.name}
+    </div>
   `
 }
 

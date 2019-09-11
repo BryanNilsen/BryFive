@@ -1,8 +1,15 @@
+:root {
+  --orange: rgb(255, 127, 0);
+  --yellow: #ffc600;
+  --red: rgb(255, 0, 0);
+  --shadow: -4px 4px 0px rgb(0, 0, 0);
+}
+
 html {
   box-sizing: border-box;
   font-size: 16px;
   background: #111111;
-  color: #ffc600;
+  color: var(--orange);
   touch-action: manipulation;
 }
 
@@ -13,11 +20,9 @@ html {
 }
 
 body {
+  font-family: 'Londrina Solid', cursive;
   padding: 0;
   margin: 0;
-  font-family: 'Londrina Solid', cursive;
-  /* font-family: 'Amatic SC', cursive; */
-  /* font-family: 'Metal Mania', cursive; */
 }
 
 /* TOP NAVIGATION */
@@ -26,11 +31,12 @@ nav {
   display: flex;
   justify-content: space-evenly;
   font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 nav a {
   text-decoration: none;
-  text-shadow: -5px 5px 0px rgb(0, 0, 0);
+  text-shadow: var(--shadow);
   -webkit-text-fill-color: rgb(61, 61, 61);
   /* Will override color (regardless of order) */
   -webkit-text-stroke-width: 2px;
@@ -38,11 +44,13 @@ nav a {
 }
 
 nav a:hover {
-  color: rgb(255, 127, 0);
-  -webkit-text-fill-color: rgb(255, 127, 0);
+  color: var(--orange);
+  -webkit-text-fill-color: var(--orange);
 }
 
 .nav_logo {
+  text-align: center;
+  width: 40%;
   font-size: 4rem;
 }
 
@@ -50,11 +58,21 @@ nav div {
   display: inline-block;
 }
 
+.nav_links {
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.nav_links div {
+  display: inline-block;
+}
+
 .score_banner {
   display: block;
   text-align: center;
   min-width: 180px;
-  width: 100%;
+  width: 20%;
   background: #111111;
 }
 
@@ -64,19 +82,19 @@ nav div {
   font-size: 2rem;
   background: #111111;
   text-align: center;
-  color: rgb(255, 0, 0);
+  color: var(--red);
 }
 
 .score {
   font-size: 3rem;
-  color: rgb(255, 127, 0);
+  color: var(--orange);
   padding: 0 3rem;
   line-height: 1;
 }
 
 h1 {
   text-align: center;
-  font-size: 6rem;
+  font-size: 5rem;
   font-weight: 400;
   line-height: 1;
   margin-bottom: 0;
@@ -88,15 +106,20 @@ h1 {
 }
 
 .start_button {
-  font-family: monospace;
-  font-size: 1.5em;
-  background: rgb(61, 61, 61);
+  font-family: 'Londrina Solid', cursive;
+  border: solid 3px rgb(0, 129, 28);
+  font-size: 2.5em;
+  background: rgb(0, 129, 28);
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
   color: rgb(224, 224, 224);
+  text-shadow: var(--shadow);
   padding: 5px 10px;
 }
 
 .start_button:hover {
-  background: rgb(0, 129, 28);
+  background: var(--orange);
+  border: solid 3px var(--orange);
 }
 
 
@@ -107,6 +130,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
+  margin-top: 2rem;
 }
 
 .hole {
@@ -114,7 +138,6 @@ h1 {
   overflow: hidden;
   position: relative;
   touch-action: manipulation;
-  /* border: 1px solid gray; */
 }
 
 
@@ -124,13 +147,6 @@ h1 {
   position: relative;
 }
 
-/* .brycon {
-  background: url('bryan.svg') bottom center no-repeat;
-} */
-
-/* .tshirt {
-  background: url('hardwired.svg') bottom center no-repeat;
-} */
 
 .hole:after {
   display: block;
@@ -176,47 +192,52 @@ h1 {
   transform: rotate(90deg) translate(0px, -100px)
 }
 
-/* .hole5 {
-  transform: scaleX(-1) rotate(180deg)
+/* TOP SCORES PAGE */
+
+.scoreboard_title {
+  color: var(--red)
 }
 
-.hole6 {
-  transform: rotate(180deg)
-} */
-
+.scoreboard_wrapper {
+  margin: auto;
+  width: 500px;
+  color: var(--orange)
+}
 
 .scoreboard {
-  text-align: center;
   font-family: monospace;
   font-size: 2em;
+  width: 100%;
+  margin-top: 1em;
 }
 
 
+/* ABOUT PAGE */
 
-/* HOME PAGE BUTTONS */
-.buttons_main {
-  width: 200px;
-  border: 4px solid black;
-  border-radius: 10px;
-  color: black;
-  font-family: 'Londrina Solid', cursive;
-  font-size: 1.5em;
-  background-color: rgb(92, 92, 92)
+.about_text {
+  border: 4px solid rgb(20, 20, 20);
+  border-radius: 20px;
+  display: inline-block;
+  color: rgb(49, 49, 49);
+  text-align: left;
+  font-size: 1.5rem;
+  font-weight: 400;
+  background-color: white;
+  min-width: 450px;
+  width: 50%;
+  padding: 10px 15px;
 }
 
-/*
-.yeah {
-  background-color: rgba(127, 219, 70, 0.5)
-} */
-
-.yeah:hover {
-  background-color: rgba(127, 219, 70, 1)
+.about_text p {
+  margin-top: 0px;
+  line-height: 1.5;
 }
 
-/* .nope {
-  background-color: rgba(227, 26, 26, 0.5)
-} */
+.about_text a {
+  color: var(--red);
+  text-decoration: none;
+}
 
-.nope:hover {
-  background-color: rgba(227, 26, 26, 1)
+.about_text a:hover {
+  color: rgb(0, 207, 0);
 }
